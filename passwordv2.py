@@ -3,7 +3,7 @@ from random import randint as Rand
 from colorama import Fore,Style
 from getpass import getpass
 from pyfiglet import figlet_format as ff
-RAW_PASSWORD="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&"
+RAW_PASSWORD = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?@#$%&"
 def genPassword(length_of_password):
     i=0
     password=""
@@ -52,12 +52,12 @@ def capitalize(data):
         else:
             pos = 0
     return res
-def save(filename,name,password,app,login=""):
+def save(filename, name, password, app, login = ""):
     f=open(filename,"a")
-    if login=="":
-        msg_wrt=Encrypt(capitalize(name)+"-"+capitalize(app)+"-"+password+"-")+"\n"
+    if login == "":
+        msg_wrt = Encrypt(capitalize(name)+"-"+capitalize(app)+"-"+password+"-")+"\n"
     else:
-        msg_wrt=Encrypt(capitalize(name)+"-"+capitalize(app)+"-"+password+"-"+capitalize(login)+"-")+"\n"
+        msg_wrt = Encrypt(capitalize(name)+"-"+capitalize(app)+"-"+password+"-"+capitalize(login)+"-")+"\n"
     f.write(msg_wrt)
     f.close()
 def see(filename,name,app,login=""):
@@ -313,7 +313,7 @@ if __name__=="__main__":
                 i = 0
                 while i < numberOfPassword:
                      password = genPassword(LEN_PASS)
-                     print(f"{i+1}. "+Fore.RED+password+Style.RESET_ALL)
+                     print(f"{i+1}. "+Fore.RED + password+Style.RESET_ALL)
                      i += 1
             else:
                 print(Fore.BLUE+"You entered wrong command !! Try again !!"+Style.RESET_ALL+"\n")
